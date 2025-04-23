@@ -15,7 +15,7 @@ const homeStyles = StyleSheet.create({
     borderBottomRightRadius: 40,
     paddingVertical: 30,
     alignItems: 'center',
-    marginBottom: 80,
+    marginBottom: 70,
   },
   logo: {
     width: 180,

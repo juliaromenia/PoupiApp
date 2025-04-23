@@ -38,6 +38,7 @@ const paginasEnergiatyles = StyleSheet.create({
         marginTop: 20,
         fontFamily: 'Baloo2_700Bold',
         textAlign: 'center',
+        marginHorizontal: 15,
       },
       line: {
         height: 1,
@@ -60,6 +61,7 @@ const paginasEnergiatyles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 20,
         marginVertical: 10,
+        marginHorizontal: 20,
       },
       icon: {
         width: 60,
@@ -68,7 +70,6 @@ const paginasEnergiatyles = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: 40,
       },
-
 });
 
 export default paginasEnergiatyles;
