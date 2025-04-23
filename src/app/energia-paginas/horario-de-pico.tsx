@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasEnergiatyles from './styles/paginas-energia';
 
-const TroqueLampadas = () => {
+const horarioDePico = () => {
   const [fontsLoaded] = useFonts({
     PatrickHand_400Regular
   });
@@ -41,13 +41,13 @@ const TroqueLampadas = () => {
       <ScrollView 
         showsVerticalScrollIndicator={false} 
       >
-      <Text style={paginasEnergiatyles.title}>Troque lâmpadas por LED</Text>
+      <Text style={paginasEnergiatyles.title}>Use eletrodomésticos fora do horário de pico</Text>
       <View style={paginasEnergiatyles.line} />
 
       <Text style={paginasEnergiatyles.subtitle}>Você sabia?</Text>
       <Text style={paginasEnergiatyles.description}>
-        Lâmpadas LED consomem até 80% menos energia que as incandescentes e duram muito mais. É um investimento que compensa rapidamente.{"\n\n"}
-        Além disso, elas esquentam menos, ajudam a manter o ambiente mais fresco e estão disponíveis em diferentes cores e modelos.
+        Para economizar na conta de luz, aproveite para usar eletrodomésticos como lavadoras, secadoras e ferros de passar fora do horário de pico de energia. Isso ajuda a reduzir os custos e contribui para um consumo mais consciente.{"\n\n"}
+        Os horários de pico geralmente acontecem entre 18h e 21h, então tente programar o uso desses aparelhos para horários alternativos.
       </Text>
 
       <Image
@@ -61,4 +61,4 @@ const TroqueLampadas = () => {
   );
 };
 
-export default TroqueLampadas;
+export default horarioDePico;

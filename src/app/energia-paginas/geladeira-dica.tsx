@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasEnergiatyles from './styles/paginas-energia';
 
-const TroqueLampadas = () => {
+const geladeiraDica = () => {
   const [fontsLoaded] = useFonts({
     PatrickHand_400Regular
   });
@@ -41,13 +41,12 @@ const TroqueLampadas = () => {
       <ScrollView 
         showsVerticalScrollIndicator={false} 
       >
-      <Text style={paginasEnergiatyles.title}>Troque lâmpadas por LED</Text>
+      <Text style={paginasEnergiatyles.title}>Mantenha a geladeira longe de fontes de calor</Text>
       <View style={paginasEnergiatyles.line} />
 
       <Text style={paginasEnergiatyles.subtitle}>Você sabia?</Text>
       <Text style={paginasEnergiatyles.description}>
-        Lâmpadas LED consomem até 80% menos energia que as incandescentes e duram muito mais. É um investimento que compensa rapidamente.{"\n\n"}
-        Além disso, elas esquentam menos, ajudam a manter o ambiente mais fresco e estão disponíveis em diferentes cores e modelos.
+        Evite posicionar a geladeira próxima ao fogão, ao forno ou exposta ao sol. Fontes de calor forçam o motor a trabalhar mais para manter a temperatura interna, aumentando o consumo de energia. Deixe um espaço ao redor para ventilação e garanta mais eficiência e economia no uso do aparelho
       </Text>
 
       <Image
@@ -61,4 +60,4 @@ const TroqueLampadas = () => {
   );
 };
 
-export default TroqueLampadas;
+export default geladeiraDica;

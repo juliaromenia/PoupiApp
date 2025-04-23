@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasEnergiatyles from './styles/paginas-energia';
 
-const TroqueLampadas = () => {
+const geladeiraDica = () => {
   const [fontsLoaded] = useFonts({
     PatrickHand_400Regular
   });
@@ -41,13 +41,12 @@ const TroqueLampadas = () => {
       <ScrollView 
         showsVerticalScrollIndicator={false} 
       >
-      <Text style={paginasEnergiatyles.title}>Troque lâmpadas por LED</Text>
+      <Text style={paginasEnergiatyles.title}>Regule o ar condicionado corretamente</Text>
       <View style={paginasEnergiatyles.line} />
 
       <Text style={paginasEnergiatyles.subtitle}>Você sabia?</Text>
       <Text style={paginasEnergiatyles.description}>
-        Lâmpadas LED consomem até 80% menos energia que as incandescentes e duram muito mais. É um investimento que compensa rapidamente.{"\n\n"}
-        Além disso, elas esquentam menos, ajudam a manter o ambiente mais fresco e estão disponíveis em diferentes cores e modelos.
+        Ajustar o ar-condicionado na temperatura ideal evita o consumo excessivo de energia. O recomendado é mantê-lo em torno de 23°C a 25°C. Limpe os filtros regularmente e evite deixar portas e janelas abertas enquanto o aparelho estiver ligado. Isso garante mais conforto e economia na conta de luz.
       </Text>
 
       <Image
@@ -61,4 +60,4 @@ const TroqueLampadas = () => {
   );
 };
 
-export default TroqueLampadas;
+export default geladeiraDica;

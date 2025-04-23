@@ -41,13 +41,13 @@ const TroqueLampadas = () => {
       <ScrollView 
         showsVerticalScrollIndicator={false} 
       >
-      <Text style={paginasEnergiatyles.title}>Troque lâmpadas por LED</Text>
+      <Text style={paginasEnergiatyles.title}>Desligue aparelhos da tomada</Text>
       <View style={paginasEnergiatyles.line} />
 
       <Text style={paginasEnergiatyles.subtitle}>Você sabia?</Text>
       <Text style={paginasEnergiatyles.description}>
-        Lâmpadas LED consomem até 80% menos energia que as incandescentes e duram muito mais. É um investimento que compensa rapidamente.{"\n\n"}
-        Além disso, elas esquentam menos, ajudam a manter o ambiente mais fresco e estão disponíveis em diferentes cores e modelos.
+        Mesmo quando desligados, aparelhos como TVs, micro-ondas e carregadores continuam consumindo energia em modo stand-by. Desligue-os completamente da tomada quando não estiver usando para evitar desperdícios e economizar na conta de luz.{"\n\n"}
+        Exemplos de aparelhos que podem ser retirados da tomada incluem: televisores, carregadores de celular, computadores, micro-ondas, cafeteiras, e até mesmo o roteador de Wi-Fi.
       </Text>
 
       <Image
