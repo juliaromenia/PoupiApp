@@ -1,8 +1,16 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import energiaStyles from './styles/energia.styles';
+import { useRouter } from 'expo-router';
 
 const Energia = () => {
+
+  const router = useRouter();
+
+  function energiaLed() {
+    router.push('../energia-paginas/energia-led'); 
+  }
+
   return (
     <View style={energiaStyles.container}>
       <View style={energiaStyles.header}>
@@ -22,7 +30,11 @@ const Energia = () => {
         showsVerticalScrollIndicator={false} // Esconde a barra de rolagem
       >
         <TouchableOpacity>
-          <Text style={energiaStyles.cards}>Troque lâmpadas por LED</Text>
+          <Text style={energiaStyles.cards}
+            onPress={energiaLed}
+          >
+            Troque lâmpadas por LED
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity>

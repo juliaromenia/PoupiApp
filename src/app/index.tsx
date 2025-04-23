@@ -34,7 +34,6 @@ const Home = () => {
         </Text>
       </View>
 
-      {/* Botões */}
       <View style={homeStyles.buttonsContainer}>
         <TouchableOpacity
           style={[homeStyles.button, homeStyles.energia]}
