@@ -7,24 +7,9 @@ const Energia = () => {
 
   const router = useRouter();
 
-  function energiaLed() {
-    router.push('../energia-paginas/energia-led'); 
-  }
-
-  function desligarAparelhos() {
-    router.push('../energia-paginas/desligar-aparelhos'); 
-  }
-
-  function horarioDePico() {
-    router.push('../energia-paginas/horario-de-pico'); 
-  }
-
-  function geladeiraDicas() {
-    router.push('../energia-paginas/geladeira-dica'); 
-  }
-
-  function arcondicionadoDica() {
-    router.push('../energia-paginas/arcondicionado-dica'); 
+  //com esse método eu consigo deixar a navegação com uma so função, e no botão onde passo ela você coloca o nome do arquivo que vai ser carregado
+  function navegarPara(pagina: string) {
+    router.push(`../energia-paginas/${pagina}`);
   }
 
   return (
@@ -48,7 +33,7 @@ const Energia = () => {
         <TouchableOpacity>
           <Text
             style={energiaStyles.cards}
-            onPress={energiaLed}
+            onPress={() => navegarPara('energia-led')}
           >
             Troque lâmpadas por LED
           </Text>
@@ -57,7 +42,7 @@ const Energia = () => {
         <TouchableOpacity>
           <Text
             style={energiaStyles.cards}
-            onPress={desligarAparelhos}
+            onPress={() => navegarPara('desligar-aparelhos')}
           >
             Desligue aparelhos da tomada
           </Text>
@@ -66,7 +51,7 @@ const Energia = () => {
         <TouchableOpacity>
           <Text
             style={energiaStyles.cards}
-            onPress={horarioDePico}
+            onPress={() => navegarPara('horario-de-pico')}
           >
             Use eletrodomésticos fora do horário de pico
           </Text>
@@ -75,7 +60,7 @@ const Energia = () => {
         <TouchableOpacity>
           <Text
             style={energiaStyles.cards}
-            onPress={geladeiraDicas}
+            onPress={() => navegarPara('geladeira-dica')}
           >
             Mantenha a geladeira longe de fontes de calor
           </Text>
@@ -84,7 +69,7 @@ const Energia = () => {
         <TouchableOpacity>
           <Text
             style={energiaStyles.cards}
-            onPress={arcondicionadoDica}
+            onPress={() => navegarPara('arcondicionado-dica')}
           >
             Regule o ar condicionado corretamente
           </Text>
