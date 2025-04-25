@@ -19,6 +19,9 @@ const Home = () => {
   function paginaEnergia() {
     router.push('/energia'); 
   }
+  function paginaAgua() {
+    router.push('/agua'); 
+  }
   
   return (
     <View style={homeStyles.container}>
@@ -46,7 +49,9 @@ const Home = () => {
           <Text style={homeStyles.buttonText}>Energia</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[homeStyles.button, homeStyles.agua]}>
+        <TouchableOpacity style={[homeStyles.button, homeStyles.agua]}
+          onPress={paginaAgua}
+        >
           <Image
             source={require('../../assets/images/agua.png')}
             style={homeStyles.icon}

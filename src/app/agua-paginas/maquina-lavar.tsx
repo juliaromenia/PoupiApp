@@ -4,8 +4,9 @@ import { useFonts, PatrickHand_400Regular } from '@expo-google-fonts/patrick-han
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasAguastyles from './styles/paginas-agua';
+//import paginasEnergiatyles from './styles/paginas-energia';
 
-const torneiraDica = () =>{
+const maquinaDica = () =>{
     const [fontsLoaded] = useFonts({
         PatrickHand_400Regular
       });
@@ -19,7 +20,6 @@ const torneiraDica = () =>{
       function voltar() {
         router.push('/agua');
       }
-
 
       return (
         <View style={paginasAguastyles.container}>
@@ -42,15 +42,13 @@ const torneiraDica = () =>{
           <ScrollView 
             showsVerticalScrollIndicator={false} 
           >
-          <Text style={paginasAguastyles.title}>Feche a torneira ao escovar os dentes ou ensaboar as mãos</Text>
+          <Text style={paginasAguastyles.title}>Reaproveite a água da máquina de lavar</Text>
           <View style={paginasAguastyles.line} />
     
           <Text style={paginasAguastyles.subtitle}>Você sabia?</Text>
           <Text style={paginasAguastyles.description}>
-          Manter a torneira aberta enquanto escova os dentes ou ensaboa as mãos pode desperdiçar até 12 litros de água por minuto. Fechá-la durante essas ações simples pode gerar uma economia de até 180 litros por mês por pessoa!
-          Além de reduzir o valor da conta de água, esse hábito ajuda a preservar os recursos naturais e incentiva um estilo de vida mais consciente e sustentável.
+            A água usada na lavagem de roupas pode ser reutilizada para lavar o quintal, calçada ou até mesmo para dar descarga.
           </Text>
-    
           <Image
             source={require('../../../assets/images/agua.png')}
             style={paginasAguastyles.icon}
@@ -62,7 +60,7 @@ const torneiraDica = () =>{
       );
     };
     
-    export default torneiraDica;
+    export default maquinaDica;
     
       
 
