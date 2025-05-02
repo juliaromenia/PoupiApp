@@ -47,7 +47,7 @@ const torneiraDica = () =>{
     
           <Text style={paginasAguastyles.subtitle}>Você sabia?</Text>
           <Text style={paginasAguastyles.description}>
-          Manter a torneira aberta enquanto escova os dentes ou ensaboa as mãos pode desperdiçar até 12 litros de água por minuto. Fechá-la durante essas ações simples pode gerar uma economia de até 180 litros por mês por pessoa!
+          Manter a torneira aberta enquanto escova os dentes ou ensaboa as mãos pode desperdiçar até 12 litros de água por minuto. Fechá-la durante essas ações simples pode gerar uma economia de até 180 litros por mês por pessoa!{"\n\n"}
           Além de reduzir o valor da conta de água, esse hábito ajuda a preservar os recursos naturais e incentiva um estilo de vida mais consciente e sustentável.
           </Text>
     

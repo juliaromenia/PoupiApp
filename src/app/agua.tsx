@@ -75,6 +75,7 @@ const Agua = () => {
           </Text>
         </TouchableOpacity>
       </ScrollView>
+      
     </View>
   );
 };
