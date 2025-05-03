@@ -17,7 +17,7 @@ const cuidadosDica = () =>{
       }
     
       function voltar() {
-        router.push('/agua');
+        router.push('/financas');
       }
 
       return (
@@ -41,7 +41,7 @@ const cuidadosDica = () =>{
           <ScrollView 
             showsVerticalScrollIndicator={false} 
           >
-          <Text style={paginasFinancasStyles.title}>Tome banho mais curtos</Text>
+          <Text style={paginasFinancasStyles.title}>Cuidado com o cartão de crédito</Text>
           <View style={paginasFinancasStyles.line} />
     
           <Text style={paginasFinancasStyles.subtitle}>Você sabia?</Text>

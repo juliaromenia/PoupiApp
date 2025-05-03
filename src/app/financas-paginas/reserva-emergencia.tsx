@@ -17,7 +17,7 @@ const reservaDica = () =>{
       }
     
       function voltar() {
-        router.push('/agua');
+        router.push('/financas');
       }
 
       return (
@@ -41,7 +41,7 @@ const reservaDica = () =>{
           <ScrollView 
             showsVerticalScrollIndicator={false} 
           >
-          <Text style={paginasFinancasStyles.title}>Tome banho mais curtos</Text>
+          <Text style={paginasFinancasStyles.title}>Tenha uma reserva de emergência</Text>
           <View style={paginasFinancasStyles.line} />
     
           <Text style={paginasFinancasStyles.subtitle}>Você sabia?</Text>

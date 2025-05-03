@@ -33,7 +33,7 @@ const Financas = () => {
         <TouchableOpacity>
           <Text
             style={financasStyles.cards}
-            onPress={() => navegarPara('contole-gastos')}
+            onPress={() => navegarPara('controle-gastos')}
           >
             Tenha um controle de gastos mensal
           </Text>
@@ -51,7 +51,7 @@ const Financas = () => {
         <TouchableOpacity>
           <Text
             style={financasStyles.cards}
-            onPress={() => navegarPara('compre-consiencia')}
+            onPress={() => navegarPara('compre-conciencia')}
           >
             Compre com consciência, não por impulso
 

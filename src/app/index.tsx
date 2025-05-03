@@ -22,7 +22,9 @@ const Home = () => {
   function paginaAgua() {
     router.push('/agua'); 
   }
-  
+  function paginaFinancas() {
+    router.push('/financas'); 
+  }
   return (
     <View style={homeStyles.container}>
       <View style={homeStyles.header}>
@@ -59,7 +61,9 @@ const Home = () => {
             <Text style={homeStyles.buttonText}>Água</Text>
           </TouchableOpacity>
 
-        <TouchableOpacity style={[homeStyles.button, homeStyles.financas]}>
+        <TouchableOpacity style={[homeStyles.button, homeStyles.financas]}
+         onPress={paginaFinancas}
+         >
           <Image
             source={require('../../assets/images/cofrinho.png')}
             style={homeStyles.icon}
