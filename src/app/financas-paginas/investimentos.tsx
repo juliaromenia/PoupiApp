@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasFinancasStyles from './styles/paginas-financas';
 
-const gastosDica = () =>{
+const investimentoDica = () =>{
     const [fontsLoaded] = useFonts({
         PatrickHand_400Regular
       });
@@ -46,7 +46,7 @@ const gastosDica = () =>{
     
           <Text style={paginasFinancasStyles.subtitle}>Você sabia?</Text>
           <Text style={paginasFinancasStyles.description}>
-          Anote tudo: desde contas fixas até aquele cafezinho. Pode ser em um caderno, planilha ou app. Saber pra onde seu dinheiro vai é o primeiro passo pra economizar.
+          Educação financeira também envolve conhecer formas de fazer o dinheiro render. Estude alternativas como Tesouro Direto, CDBs ou fundos de renda fixa. Começar a investir, mesmo com valores menores, é um passo importante rumo à independência financeira.
           </Text>
     
           <Image
@@ -60,4 +60,4 @@ const gastosDica = () =>{
       );
     };
     
-    export default gastosDica;
+    export default investimentoDica;

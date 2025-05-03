@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasFinancasStyles from './styles/paginas-financas';
 
-const gastosDica = () =>{
+const cuidadosDica = () =>{
     const [fontsLoaded] = useFonts({
         PatrickHand_400Regular
       });
@@ -46,7 +46,7 @@ const gastosDica = () =>{
     
           <Text style={paginasFinancasStyles.subtitle}>Você sabia?</Text>
           <Text style={paginasFinancasStyles.description}>
-          Anote tudo: desde contas fixas até aquele cafezinho. Pode ser em um caderno, planilha ou app. Saber pra onde seu dinheiro vai é o primeiro passo pra economizar.
+          O cartão de crédito pode ser um recurso útil, desde que utilizado com responsabilidade. Procure evitar o acúmulo de parcelas e priorize o pagamento do valor total da fatura. O uso descontrolado pode comprometer o orçamento e gerar dívidas com altos encargos.
           </Text>
     
           <Image
@@ -60,4 +60,4 @@ const gastosDica = () =>{
       );
     };
     
-    export default gastosDica;
+    export default cuidadosDica;

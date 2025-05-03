@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasFinancasStyles from './styles/paginas-financas';
 
-const gastosDica = () =>{
+const concienciaDica = () =>{
     const [fontsLoaded] = useFonts({
         PatrickHand_400Regular
       });
@@ -46,7 +46,7 @@ const gastosDica = () =>{
     
           <Text style={paginasFinancasStyles.subtitle}>Você sabia?</Text>
           <Text style={paginasFinancasStyles.description}>
-          Anote tudo: desde contas fixas até aquele cafezinho. Pode ser em um caderno, planilha ou app. Saber pra onde seu dinheiro vai é o primeiro passo pra economizar.
+          Antes de realizar uma compra, reflita sobre a real necessidade do item. Avalie se trata-se de um gasto planejado ou apenas um desejo momentâneo. Evitar decisões por impulso contribui para uma gestão financeira mais equilibrada e consciente.
           </Text>
     
           <Image
@@ -60,4 +60,4 @@ const gastosDica = () =>{
       );
     };
     
-    export default gastosDica;
+    export default concienciaDica;
