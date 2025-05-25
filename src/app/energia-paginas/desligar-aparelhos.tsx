@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasEnergiatyles from './styles/paginas-energia';
 
-const TroqueLampadas = () => {
+const DesligarAparelhos = () => {
   const [fontsLoaded] = useFonts({
     PatrickHand_400Regular
   });
@@ -61,4 +61,4 @@ const TroqueLampadas = () => {
   );
 };
 
-export default TroqueLampadas;
+export default DesligarAparelhos;

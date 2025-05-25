@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasEnergiatyles from './styles/paginas-energia';
 
-const geladeiraDica = () => {
+const arCondicionadoDica = () => {
   const [fontsLoaded] = useFonts({
     PatrickHand_400Regular
   });
@@ -60,4 +60,4 @@ const geladeiraDica = () => {
   );
 };
 
-export default geladeiraDica;
+export default arCondicionadoDica;
