@@ -19,7 +19,12 @@ const Home = () => {
   function paginaEnergia() {
     router.push('/energia'); 
   }
-  
+  function paginaAgua() {
+    router.push('/agua'); 
+  }
+  function paginaFinancas() {
+    router.push('/financas'); 
+  }
   return (
     <View style={homeStyles.container}>
       <View style={homeStyles.header}>
@@ -46,7 +51,9 @@ const Home = () => {
           <Text style={homeStyles.buttonText}>Energia</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[homeStyles.button, homeStyles.agua]}>
+        <TouchableOpacity style={[homeStyles.button, homeStyles.agua]}
+          onPress={paginaAgua}
+        >
           <Image
             source={require('../../assets/images/agua.png')}
             style={homeStyles.icon}
@@ -54,7 +61,9 @@ const Home = () => {
             <Text style={homeStyles.buttonText}>Água</Text>
           </TouchableOpacity>
 
-        <TouchableOpacity style={[homeStyles.button, homeStyles.financas]}>
+        <TouchableOpacity style={[homeStyles.button, homeStyles.financas]}
+         onPress={paginaFinancas}
+         >
           <Image
             source={require('../../assets/images/cofrinho.png')}
             style={homeStyles.icon}

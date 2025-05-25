@@ -3,9 +3,10 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useFonts, PatrickHand_400Regular } from '@expo-google-fonts/patrick-hand';
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
-import paginasFinancasStyles from './styles/paginas-financas';
+import paginasAguastyles from './styles/paginas-agua';
+//import paginasEnergiatyles from './styles/paginas-energia';
 
-const gastosDica = () =>{
+const maquinaDica = () =>{
     const [fontsLoaded] = useFonts({
         PatrickHand_400Regular
       });
@@ -17,41 +18,40 @@ const gastosDica = () =>{
       }
     
       function voltar() {
-        router.push('/financas');
+        router.push('/agua');
       }
 
       return (
-        <View style={paginasFinancasStyles.container}>
-          <View style={paginasFinancasStyles.header}>
+        <View style={paginasAguastyles.container}>
+          <View style={paginasAguastyles.header}>
             <TouchableOpacity
-              style={paginasFinancasStyles.backButton}
+              style={paginasAguastyles.backButton}
               onPress={voltar}
             >
               <Image
                 source={require('../../../assets/images/seta-esquerda.png')}
-                style={paginasFinancasStyles.backIcon}
+                style={paginasAguastyles.backIcon}
               />
             </TouchableOpacity>
             <Image
               source={require('../../../assets/images/logo_poupi_semfundo.png')}
-              style={paginasFinancasStyles.logo}
+              style={paginasAguastyles.logo}
             />
           </View>
     
           <ScrollView 
             showsVerticalScrollIndicator={false} 
           >
-          <Text style={paginasFinancasStyles.title}>Tenha um controle de gastos mensal</Text>
-          <View style={paginasFinancasStyles.line} />
+          <Text style={paginasAguastyles.title}>Reaproveite a água da máquina de lavar</Text>
+          <View style={paginasAguastyles.line} />
     
-          <Text style={paginasFinancasStyles.subtitle}>Você sabia?</Text>
-          <Text style={paginasFinancasStyles.description}>
-          Anote tudo: desde contas fixas até aquele cafezinho. Pode ser em um caderno, planilha ou app. Saber pra onde seu dinheiro vai é o primeiro passo pra economizar.
+          <Text style={paginasAguastyles.subtitle}>Você sabia?</Text>
+          <Text style={paginasAguastyles.description}>
+            A água usada na lavagem de roupas pode ser reutilizada para lavar o quintal, calçada ou até mesmo para dar descarga.
           </Text>
-    
           <Image
-            source={require('../../../assets/images/cofrinho.png')}
-            style={paginasFinancasStyles.icon}
+            source={require('../../../assets/images/agua.png')}
+            style={paginasAguastyles.icon}
           />
     
            </ScrollView>
@@ -60,4 +60,7 @@ const gastosDica = () =>{
       );
     };
     
-    export default gastosDica;
+    export default maquinaDica;
+    
+      
+

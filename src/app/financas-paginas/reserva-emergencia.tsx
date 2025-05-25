@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasFinancasStyles from './styles/paginas-financas';
 
-const gastosDica = () =>{
+const reservaDica = () =>{
     const [fontsLoaded] = useFonts({
         PatrickHand_400Regular
       });
@@ -41,12 +41,12 @@ const gastosDica = () =>{
           <ScrollView 
             showsVerticalScrollIndicator={false} 
           >
-          <Text style={paginasFinancasStyles.title}>Tenha um controle de gastos mensal</Text>
+          <Text style={paginasFinancasStyles.title}>Tenha uma reserva de emergência</Text>
           <View style={paginasFinancasStyles.line} />
     
           <Text style={paginasFinancasStyles.subtitle}>Você sabia?</Text>
           <Text style={paginasFinancasStyles.description}>
-          Anote tudo: desde contas fixas até aquele cafezinho. Pode ser em um caderno, planilha ou app. Saber pra onde seu dinheiro vai é o primeiro passo pra economizar.
+          Manter uma reserva financeira é fundamental para lidar com imprevistos, como despesas médicas, consertos ou perda de renda. O ideal é guardar o equivalente a pelo menos três meses do seu custo de vida em uma aplicação segura e de fácil acesso.
           </Text>
     
           <Image
@@ -60,4 +60,4 @@ const gastosDica = () =>{
       );
     };
     
-    export default gastosDica;
+    export default reservaDica;
