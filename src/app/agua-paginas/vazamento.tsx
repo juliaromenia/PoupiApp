@@ -4,64 +4,70 @@ import { useFonts, PatrickHand_400Regular } from '@expo-google-fonts/patrick-han
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
 import paginasAguastyles from './styles/paginas-agua';
-//import paginasEnergiatyles from './styles/paginas-energia';
+import { BottomMenu } from '../../app/bottomMenu';
 
-const torneiraDica = () =>{
+const vazamentoDica = () =>{
     const [fontsLoaded] = useFonts({
         PatrickHand_400Regular
       });
-    
-      const router = useRouter();
-    
-      if (!fontsLoaded) {
-        return <AppLoading />;
-      }
-    
-      function voltar() {
-        router.push('/agua');
-      }
+    const [filtro, setFiltro] = React.useState('');
+    const router = useRouter();
 
-      return (
-        <View style={paginasAguastyles.container}>
-          <View style={paginasAguastyles.header}>
-            <TouchableOpacity
-              style={paginasAguastyles.backButton}
-              onPress={voltar}
-            >
-              <Image
-                source={require('../../../assets/images/seta-esquerda.png')}
-                style={paginasAguastyles.backIcon}
-              />
-            </TouchableOpacity>
-            <Image
-              source={require('../../../assets/images/logo_poupi_semfundo.png')}
-              style={paginasAguastyles.logo}
-            />
-          </View>
-    
-          <ScrollView 
-            showsVerticalScrollIndicator={false} 
+    const textoDescricao = `Vazamentos de água podem aumentar significativamente sua conta. Verifique regularmente torneiras, chuveiros e encanamentos para garantir que não há vazamentos. Isso pode economizar até 30% na sua conta de água.`;
+    const descricaoFiltrada = textoDescricao.toLowerCase().includes(filtro.toLowerCase());
+
+    if (!fontsLoaded) {
+      return <AppLoading />;
+    }
+
+    function voltar() {
+      router.push('/agua');
+    }
+
+    return (
+      <View style={paginasAguastyles.container}>
+        <View style={paginasAguastyles.header}>
+          <TouchableOpacity
+            style={paginasAguastyles.backButton}
+            onPress={voltar}
           >
+            <Image
+              source={require('../../../assets/images/seta-esquerda.png')}
+              style={paginasAguastyles.backIcon}
+            />
+          </TouchableOpacity>
+          <Image
+            source={require('../../../assets/images/logo_poupi_semfundo.png')}
+            style={paginasAguastyles.logo}
+          />
+        </View>
+
+        <ScrollView 
+          showsVerticalScrollIndicator={false} 
+        >
           <Text style={paginasAguastyles.title}>Verifique e conserte vazamentos</Text>
           <View style={paginasAguastyles.line} />
-    
+
           <Text style={paginasAguastyles.subtitle}>Você sabia?</Text>
-          <Text style={paginasAguastyles.description}>
-          Vazamentos de água podem aumentar significativamente sua conta. Verifique regularmente torneiras, chuveiros e encanamentos para garantir que não há vazamentos. Isso pode economizar até 30% na sua conta de água.
-          </Text>
-    
+          {descricaoFiltrada && (
+            <Text style={paginasAguastyles.description}>
+              {textoDescricao}
+            </Text>
+          )}
           <Image
             source={require('../../../assets/images/agua.png')}
             style={paginasAguastyles.icon}
           />
-    
-           </ScrollView>
-          </View>
-          
-      );
-    };
-    
-    export default torneiraDica;
-    
-      
+        </ScrollView>
+        <BottomMenu
+          backgroundColor="#89ccff"
+          onSearch={setFiltro}
+        />
+      </View>
+    );
+};
+
+export default vazamentoDica;
+
+
 

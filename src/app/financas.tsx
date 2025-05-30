@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import financasStyles from './styles/financas.styles';
+import { BottomMenu } from '../app//bottomMenu';
 
 const Financas = () => {
-
+  const [filtro, setFiltro] = useState('');
   const router = useRouter();
 
-  //com esse método eu consigo deixar a navegação com uma so função, e no botão onde passo ela você coloca o nome do arquivo que vai ser carregado
+  const dicas = [
+    { label: 'Tenha um controle de gastos mensal', pagina: 'controle-gastos' },
+    { label: 'Cuidado com o cartão de crédito', pagina: 'cuidados-cartao' },
+    { label: 'Compre com consciência, não por impulso', pagina: 'compre-conciencia' },
+    { label: 'Tenha uma reserva de emergência', pagina: 'reserva-emergencia' },
+    { label: 'Aprenda sobre investimentos básicos', pagina: 'investimentos' },
+  ];
+
+  const dicasFiltradas = dicas.filter(dica =>
+    dica.label.toLowerCase().includes(filtro.toLowerCase())
+  );
+
   function navegarPara(pagina: string) {
     router.push(`../financas-paginas/${pagina}`);
   }
@@ -30,52 +42,22 @@ const Financas = () => {
         contentContainerStyle={financasStyles.content}
         showsVerticalScrollIndicator={false}
       >
-        <TouchableOpacity>
-          <Text
-            style={financasStyles.cards}
-            onPress={() => navegarPara('controle-gastos')}
-          >
-            Tenha um controle de gastos mensal
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={financasStyles.cards}
-            onPress={() => navegarPara('cuidados-cartao')}
-          >
-           Cuidado com o cartão de crédito
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={financasStyles.cards}
-            onPress={() => navegarPara('compre-conciencia')}
-          >
-            Compre com consciência, não por impulso
-
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={financasStyles.cards}
-            onPress={() => navegarPara('reserva-emergencia')}
-          >
-            Tenha uma reserva de emergência
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={financasStyles.cards}
-            onPress={() => navegarPara('investimentos')}
-          >
-           Aprenda sobre investimentos básicos
-          </Text>
-        </TouchableOpacity>
+        {dicasFiltradas.map(dica => (
+          <TouchableOpacity key={dica.pagina}>
+            <Text
+              style={financasStyles.cards}
+              onPress={() => navegarPara(dica.pagina)}
+            >
+              {dica.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
+        <View style={{ height: 80 }} />
       </ScrollView>
+      <BottomMenu
+        backgroundColor="#9ed32b"
+        onSearch={setFiltro}
+      />
     </View>
   );
 };

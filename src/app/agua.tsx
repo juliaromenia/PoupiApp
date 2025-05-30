@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import aguaStyles from './styles/agua.styles'
 import { useRouter } from 'expo-router';
+import { BottomMenu } from '../app/bottomMenu';
 
 const Agua = () => {
-
+  const [filtro, setFiltro] = useState('');
   const router = useRouter();
 
-  //com esse método eu consigo deixar a navegação com uma so função, e no botão onde passo ela você coloca o nome do arquivo que vai ser carregado
+  const dicas = [
+    { label: 'Feche a torneira ao escovar os dentes ou ensaboar as mãos', pagina: 'torneira' },
+    { label: 'Reaproveite a água da máquina de lavar', pagina: 'maquina-lavar' },
+    { label: 'Verifique e conserte vazamentos', pagina: 'vazamento' },
+    { label: 'Tome banhos mais curtos', pagina: 'banho' },
+    { label: 'Regue plantas no início da manhã ou à noite', pagina: 'regar-plantas' },
+  ];
+
+  const dicasFiltradas = dicas.filter(dica =>
+    dica.label.toLowerCase().includes(filtro.toLowerCase())
+  );
+
   function navegarPara(pagina: string) {
     router.push(`../agua-paginas/${pagina}`);
   }
@@ -30,52 +42,21 @@ const Agua = () => {
         contentContainerStyle={aguaStyles.content}
         showsVerticalScrollIndicator={false}
       >
-        <TouchableOpacity>
-          <Text
-            style={aguaStyles.cards}
-            onPress={() => navegarPara('torneira')}
-          >
-            Feche a torneira ao escovar os dentes ou ensaboar as mãos
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={aguaStyles.cards}
-            onPress={() => navegarPara('maquina-lavar')}
-          >
-            Reaproveite a água da máquina de lavar
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={aguaStyles.cards}
-            onPress={() => navegarPara('vazamento')}
-          >
-            Verifique e conserte vazamentos
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={aguaStyles.cards}
-            onPress={() => navegarPara('banho')}
-          >
-            Tome banhos mais curtos
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text
-            style={aguaStyles.cards}
-            onPress={() => navegarPara('regar-plantas')}
-          >
-            Regue plantas no início da manhã ou à noite
-          </Text>
-        </TouchableOpacity>
+        {dicasFiltradas.map(dica => (
+          <TouchableOpacity key={dica.pagina}>
+            <Text
+              style={aguaStyles.cards}
+              onPress={() => navegarPara(dica.pagina)}
+            >
+              {dica.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
+        <View style={{ height: 80 }} />
       </ScrollView>
-      
+      <BottomMenu
+        backgroundColor="#89ccff"
+        onSearch={setFiltro} />
     </View>
   );
 };

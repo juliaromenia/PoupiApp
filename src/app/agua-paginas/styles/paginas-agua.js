@@ -7,6 +7,7 @@ const paginasAguastyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         paddingTop: 0,
+        paddingBottom: 80,
       },
       header: {
         backgroundColor: '#89ccff',
