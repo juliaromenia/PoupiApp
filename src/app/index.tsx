@@ -1,78 +1,62 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image, } from 'react-native';
-import { useFonts, Baloo2_700Bold } from '@expo-google-fonts/baloo-2';
-import { useRouter } from 'expo-router';
-import AppLoading from 'expo-app-loading';
-import homeStyles from './styles/home.styles';
 
-const Home = () => {
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, ScrollView, } from 'react-native';
+import { useFonts, Baloo2_700Bold } from '@expo-google-fonts/baloo-2'; 
+import AppLoading from 'expo-app-loading'; 
+import { useRouter } from 'expo-router';
+import indexStyles from './styles/index.styles';
+
+
+
+const TelaInicial = () => {
   const [fontsLoaded] = useFonts({
-    Baloo2_700Bold,
+    Baloo2_700Bold, 
   });
 
-  const router = useRouter();
+  const router = useRouter(); 
 
   if (!fontsLoaded) {
     return <AppLoading />;
   }
 
-  function paginaEnergia() {
-    router.push('/energia'); 
+  function paginaLogin() {
+    router.push('/login'); 
   }
-  function paginaAgua() {
-    router.push('/agua'); 
-  }
-  function paginaFinancas() {
-    router.push('/financas'); 
-  }
-  return (
-    <View style={homeStyles.container}>
-      <View style={homeStyles.header}>
-        <Image style={homeStyles.logo}
-            source={require('../../assets/images/logo_poupi.png')
-            }
-        />
-        <Text style={homeStyles.subtitle}>
-          SEU APP DE DICAS PARA ECONOMIZAR{"\n"}
-          ENERGIA, ÁGUA E ORGANIZAR FINANÇAS{"\n"}
-          PESSOAIS
-        </Text>
-      </View>
 
-      <View style={homeStyles.buttonsContainer}>
-        <TouchableOpacity
-          style={[homeStyles.button, homeStyles.energia]}
-          onPress={paginaEnergia}
+  function paginaCadastro() {
+    router.push('/cadastro'); 
+  }
+
+  return (
+    <View style={indexStyles.container}>
+      
+      <Image
+        style={indexStyles.logo}
+        source={require('../../assets/images/logo_poupi_semfundo.png')}
+        resizeMode="contain"
+      />
+
+      {/* Fundo arredondado com os botões */}
+      <View style={indexStyles.subContainer}>
+        <Text style={indexStyles.subtitle}>
+          Bem Vindo(a) ao Poupi!
+        </Text>
+
+        <TouchableOpacity style={indexStyles.buttons}
+          onPress={paginaLogin}  
         >
-          <Image
-            source={require('../../assets/images/energia.png')}
-            style={homeStyles.icon}
-          />
-          <Text style={homeStyles.buttonText}>Energia</Text>
+          <Text style={indexStyles.buttonText}>Acessar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[homeStyles.button, homeStyles.agua]}
-          onPress={paginaAgua}
+        <TouchableOpacity
+          style={indexStyles.buttons}
+          onPress={paginaCadastro}
         >
-          <Image
-            source={require('../../assets/images/agua.png')}
-            style={homeStyles.icon}
-          />
-            <Text style={homeStyles.buttonText}>Água</Text>
-          </TouchableOpacity>
-
-        <TouchableOpacity style={[homeStyles.button, homeStyles.financas]}
-         onPress={paginaFinancas}
-         >
-          <Image
-            source={require('../../assets/images/cofrinho.png')}
-            style={homeStyles.icon}
-          />
-          <Text style={homeStyles.buttonText}>Finanças</Text>
+          <Text style={indexStyles.buttonText}>Criar Conta</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default Home;
+export default TelaInicial;
