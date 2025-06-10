@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
-const loginStyles = StyleSheet.create({
+const cadastroStyles = StyleSheet.create({
 
-  container: {
+container: {
   flex: 1,
   backgroundColor: '#adadd9',
   alignItems: 'center',
@@ -112,8 +112,7 @@ button: {
     alignItems: 'center',
     marginVertical: -30
   },
-
 });
 
 
-export default loginStyles;
+export default cadastroStyles;
