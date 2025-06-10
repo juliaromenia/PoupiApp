@@ -92,8 +92,8 @@ input: {
 
 button: {
     backgroundColor: '#F48FB1',
-    paddingVertical: 12,
-    width: 190,         
+    paddingVertical: 8,
+    width: 200,         
     borderRadius: 25,
     marginBottom: 30,
     alignItems: 'center',
