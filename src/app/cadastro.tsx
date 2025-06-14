@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, TextInput, } from 'react-native';
 import { useFonts, Baloo2_700Bold } from '@expo-google-fonts/baloo-2'; 
 import AppLoading from 'expo-app-loading'; 
@@ -9,6 +9,10 @@ const Cadastro = () => {
     const [fontsLoaded] = useFonts({
     Baloo2_700Bold, 
   });
+ 
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
   const router = useRouter(); 
 
@@ -16,77 +20,83 @@ const Cadastro = () => {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-
-  function cadastro() {
-    router.push('/cadastro'); 
-  
+  function login() {
+    // Aqui você pode adicionar a lógica de cadastro, como enviar os dados para um servidor
+    console.log('Cadastro realizado:', { nome, email, senha });
+    // Após o cadastro, redireciona para a página de login
+    router.push('/login'); 
   }
 
-  function inicial() {
-    router.push('/inicial');
+  function voltar() {
+    router.push('/login'); 
   }
 
 return (
   <View style={cadastroStyles.container}>
-    <View style={cadastroStyles.logoContainer}>
+     <View>
+      <TouchableOpacity
+        style={cadastroStyles.backButton}
+        onPress={voltar}
+      >
+        <Image
+          source={require('../../assets/images/seta-esquerda.png')}
+          style={cadastroStyles.backIcon}
+        />
+      </TouchableOpacity>
+      </View>
+     <View style={cadastroStyles.logoContainer}>
+    
       <Image
         style={cadastroStyles.logo}
         source={require('../../assets/images/logo_poupi_semfundo.png')}
         resizeMode="contain"
       />
-    </View>
+     </View>
+     <View style={cadastroStyles.subContainer}>
 
-    <View style={cadastroStyles.subContainer}>
+      
+    
       <Image
         source={require('../../assets/images/cadastro.png')}
         style={cadastroStyles.imagem}
       />
       <Text style={cadastroStyles.titulo}>Cadastro</Text>
+      
+      <TextInput
+        style={cadastroStyles.inputContainer}
+        placeholder="Nome"
+        value={nome}
+        onChangeText={setNome}
+       />
 
-      <View style={cadastroStyles.inputContainer}>
-        <Image
-          source={require('../../assets/images/icon-email.png')}
-          style={cadastroStyles.iconEmail}
-        />
-        <TextInput
-          style={cadastroStyles.input}
-          placeholder="Email"
-          placeholderTextColor="#888"
-          keyboardType="email-address"
-        />
-      </View>
-
-      <View style={cadastroStyles.inputContainer}>
-        <Image
-          source={require('../../assets/images/icon-cadeado.png')}
-          style={cadastroStyles.iconUser}
-        />
-        <TextInput
-          style={cadastroStyles.input}
-          placeholder="Senha"
-          placeholderTextColor="#888"
-          secureTextEntry
-        />
-      </View>
-
-      <TouchableOpacity
-        style={cadastroStyles.button}
-        onPress={inicial}
-      >
-        <Text style={cadastroStyles.buttonText}>Acessar</Text>
+      <TextInput
+        style={cadastroStyles.inputContainer}
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+      />
+      <TextInput
+        style={cadastroStyles.inputContainer}
+        placeholder="Senha"
+        value={senha}
+        onChangeText={setSenha}
+        secureTextEntry 
+      />
+      <TouchableOpacity style={cadastroStyles.button} onPress={login}>
+        <Text style={cadastroStyles.buttonText}>CADASTRAR</Text>
       </TouchableOpacity>
 
-      <Text style={cadastroStyles.subtexto}>
-        Não tem uma conta?{"\n"}
+      <Text style={cadastroStyles.buttonText}>
+        Já tem uma conta? Faça{' '}
+        <Text style={cadastroStyles.link} onPress={login}>
+          Login
+        </Text>
       </Text>
 
-      <TouchableOpacity
-        style={cadastroStyles.buttonCadastro}
-        onPress={cadastro}
-      >
-        <Text style={cadastroStyles.buttonText}>Cadastre-se</Text>
-      </TouchableOpacity>
     </View>
+
+
   </View>
 );
 

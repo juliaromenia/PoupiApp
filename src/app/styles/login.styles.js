@@ -17,9 +17,17 @@ logo: {
   width: 200,
   height: 300,
 },
+ backButton: {
+        padding: 20,
+      },
+      backIcon: {
+        width: 40,
+        height: 40,
+      },
 
 subContainer: {
   position: 'relative',
+  marginTop: -50,
   backgroundColor: '#f6d5aa',
   borderRadius: 30,
   width: '85%',
@@ -41,10 +49,10 @@ titulo: {
   fontSize: 20,
   fontWeight: 'bold',
   color: '#fff',
-  marginBottom: 70,
-  paddingHorizontal: 200,
   textAlign: 'center',
   marginTop: 50,
+  marginLeft: 50,
+  marginBottom: 60,
   fontFamily: 'Baloo2_700Bold',
 },
 subtexto: {
@@ -57,6 +65,7 @@ subtexto: {
 },
 inputContainer: {
   flexDirection: 'row',
+  textAlign: 'center',
   alignItems: 'center',
   borderWidth: 1,
   borderColor: '#ccc',
@@ -65,7 +74,9 @@ inputContainer: {
   marginBottom: 20,
   backgroundColor: '#fff',
   width: '85%',
-  height: 50, // altura consistente
+  height: 50, 
+  fontSize: 14,
+  fontFamily: 'Baloo2_700Bold', 
 },
 
 iconEmail: {

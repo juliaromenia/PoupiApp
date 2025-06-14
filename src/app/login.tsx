@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, TextInput, } from 'react-native';
 import { useFonts, Baloo2_700Bold } from '@expo-google-fonts/baloo-2'; 
 import AppLoading from 'expo-app-loading'; 
@@ -10,6 +10,10 @@ const Login = () => {
     const [fontsLoaded] = useFonts({
     Baloo2_700Bold, 
   });
+
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+  
 
   const router = useRouter(); 
 
@@ -42,7 +46,7 @@ const Login = () => {
         source={require('../../assets/images/login-conta.png')}
         style={loginStyles.imagem}
       />
-      <Text style={loginStyles.titulo}>LOGIN</Text>
+      <Text style={loginStyles.titulo}>Login</Text>
 
       <View style={loginStyles.inputContainer}>
         <Image
@@ -52,7 +56,8 @@ const Login = () => {
         <TextInput
           style={loginStyles.input}
           placeholder="Email"
-          placeholderTextColor="#888"
+          value={email}
+          onChangeText={setEmail}
           keyboardType="email-address"
         />
       </View>
@@ -65,8 +70,9 @@ const Login = () => {
         <TextInput
           style={loginStyles.input}
           placeholder="Senha"
-          placeholderTextColor="#888"
-          secureTextEntry
+          value={senha}
+          onChangeText={setSenha}
+          secureTextEntry 
         />
       </View>
 
