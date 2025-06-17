@@ -21,14 +21,12 @@ const Cadastro = () => {
     return <AppLoading />;
   }
   function login() {
-    // Aqui você pode adicionar a lógica de cadastro, como enviar os dados para um servidor
     console.log('Cadastro realizado:', { nome, email, senha });
-    // Após o cadastro, redireciona para a página de login
     router.push('/login'); 
   }
 
   function voltar() {
-    router.push('/login'); 
+    router.push('/'); 
   }
 
 return (

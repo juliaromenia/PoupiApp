@@ -36,7 +36,6 @@ const TelaInicial = () => {
         resizeMode="contain"
       />
 
-      {/* Fundo arredondado com os botões */}
       <View style={indexStyles.subContainer}>
         <Text style={indexStyles.subtitle}>
           Bem Vindo(a) ao Poupi!

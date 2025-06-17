@@ -22,7 +22,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ backgroundColor = '#87CE
 
   return (
     <View style={[styles.container, { backgroundColor }]}>
-      <TouchableOpacity onPress={() => router.push('/')}>
+      <TouchableOpacity onPress={() => router.push('/inicial')}>
         <Image source={require('../../assets/images/home.png')} style={styles.icon} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setShowSearch(!showSearch)}>
