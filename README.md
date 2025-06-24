@@ -28,10 +28,10 @@ Aplicativo de **gestão financeira pessoal** para ajudar usuários a controlar s
 
 ## ⚙️ Instalação
 
-1. Clone o repositório:
-
+1. Clone o repositório
 bash
 git clone https://github.com/juliaromenia/PoupiApp
+
 
 2. Instale as dependências
 bash
